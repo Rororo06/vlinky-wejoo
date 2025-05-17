@@ -1,0 +1,16 @@
+
+# netlify.toml
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Add cache control for better localStorage handling
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Cache-Control = "no-cache"
